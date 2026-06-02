@@ -56,3 +56,23 @@ Request Modification: Removes Accept-Encoding to prevent compression
 Response Injection: Adds JavaScript code before </body> tag
 
 Header Update: Recalculates and updates Content-Length
+
+## 📜 Legal Notice
+
+This project is **FOR EDUCATIONAL PURPOSES ONLY**.
+
+The author does not condone or support illegal activities. The user assumes all responsibility for compliance with local laws and regulations.
+
+**By using this software, you agree to:**
+- ✅ Use only in authorized environments
+- ✅ Obtain written permission before testing
+- ✅ Not use for malicious purposes
+- ✅ Accept full legal responsibility
+
+**Violations may result in:**
+- 🔴 Criminal charges under cybercrime laws
+- 🔴 Civil lawsuits
+- 🔴 Permanent ban from GitHub
+- 🔴 Revocation of security certifications
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
