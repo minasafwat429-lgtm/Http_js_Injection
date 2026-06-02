@@ -1,0 +1,9 @@
+netfilterqueue
+scapy
+# Install Python packages
+pip install -r requirements.txt
+
+# Install netfilterqueue (if needed)
+sudo apt-get update
+sudo apt-get install build-essential python3-dev libnetfilterqueue-dev
+pip install NetfilterQueue
